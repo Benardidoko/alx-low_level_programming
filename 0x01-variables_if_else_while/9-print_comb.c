@@ -18,7 +18,7 @@ int main(void)
 		if (num < 9)
 		{
 			putchar(',');
-			putchar('	'); /* Tab character for indentation */
+			putchar(' '); /* Add a space after the comma */
 		}
 	}
 
