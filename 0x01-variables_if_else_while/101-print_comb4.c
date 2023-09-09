@@ -1,42 +1,38 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
- *
- * Description: Prints all possible different combinations of three digits.
- *
- * Return: Always 0 (Success)
- */
+ *  * main - Entry point
+ *   *
+ *    * Description: Prints all possible different combinations of three digits.
+ *     * Numbers must be separated by ', ' followed by a space.
+ *      * The three digits must be different.
+ *       * Numbers should be printed in ascending order, with three digits.
+ *        *
+ *         * Return: Always 0 (Success)
+ *          */
 int main(void)
 {
-	int digit1, digit2, digit3, digit4;
+		int i, j, k;
 
-	for (digit1 = 0; digit1 <= 9; digit1++)
-	{
-		for (digit2 = digit1 + 1; digit2 <= 9; digit2++)
-		{
-			for (digit3 = digit2 + 1; digit3 <= 9; digit3++)
-			{
-				for (digit4 = digit3 + 1; digit4 <= 9; digit4++)
-				{
-					putchar(digit1 + '0');
-					putchar(digit2 + '0');
-					putchar(' ');
-					putchar(digit3 + '0');
-					putchar(digit4 + '0');
-
-					if (digit1 != 9 || digit2 != 8 || digit3 != 9 || digit4 != 9)
+			for (i = 0; i < 10; i++)
 					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
-			}
-		}
-	}
+								for (j = i + 1; j < 10; j++)
+											{
+															for (k = j + 1; k < 10; k++)
+																			{
+																								putchar('0' + i);
+																												putchar('0' + j);
+																																putchar('0' + k);
+																																				if (i < 7)
+																																									{
+																																															putchar(',');
+																																																				putchar(' ');
+																																																								}
+																																							}
+																	}
+									}
 
-	putchar('\n');
+				putchar('\n');
 
-	return (0);
+					return (0);
 }
-
