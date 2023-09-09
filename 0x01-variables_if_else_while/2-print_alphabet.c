@@ -9,18 +9,14 @@
  */
 int main(void)
 {
-    /* Declare a variable to store the character */
-    char c;
+    char c; /* Declare a variable to store the character */
 
-    /* Loop through the lowercase alphabet */
-    for (c = 'a'; c <= 'z'; c++)
+    for (c = 'a'; c <= 'z'; c++) /* Loop through the lowercase alphabet */
     {
-        /* Use putchar to print each character */
-        putchar(c);
+        putchar(c); /* Use putchar to print each character */
     }
 
-    /* Print a newline character */
-    putchar('\n');
+    putchar('\n'); /* Print a newline character */
 
     return (0);
 }
