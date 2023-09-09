@@ -7,15 +7,15 @@
  */
 int main(void)
 {
-    char letter = 'z';  /* Start with 'z', the last lowercase letter */
+	char letter = 'z'; /* Start with 'z', the last lowercase letter */
 
-    while (letter >= 'a')
-    {
-        putchar(letter);
-        letter--;
-    }
+	while (letter >= 'a')
+	{
+		putchar(letter);
+		letter--;
+	}
 
-    putchar('\n');
-    return (0);
+	putchar('\n');
+	return (0);
 }
 
