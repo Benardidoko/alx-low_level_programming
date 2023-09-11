@@ -1,0 +1,2 @@
+CFILE=main.c ./generate_asm.sh
+
