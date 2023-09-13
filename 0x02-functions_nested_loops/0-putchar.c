@@ -1,20 +1,24 @@
-#include "main.h"
 #include <stdio.h>
-/* main entry point of program*/
 
+/**
+ * main - Entry point of the program
+ *
+ * Description: This function prints the string "_putchar" followed by a new line.
+ *
+ * Return: 0 if successful
+ */
 int main(void)
 {
-		/*description: printing _putchar followed by a new line*/
-
-		_putchar('_');
-			_putchar('p');
-				_putchar('u');
-					_putchar('t');
-						_putchar('c');
-							_putchar('h');
-								_putchar('a');
-									_putchar('r');
-										_putchar('\n');
-
-											return (0);
+    putchar('_');
+    putchar('p');
+    putchar('u');
+    putchar('t');
+    putchar('c');
+    putchar('h');
+    putchar('a');
+    putchar('r');
+    putchar('\n');
+    
+    return (0);
 }
+
