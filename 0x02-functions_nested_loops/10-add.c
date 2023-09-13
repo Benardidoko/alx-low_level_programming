@@ -2,15 +2,12 @@
 #include <stdio.h>
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * add - adds two integers
+ * @x: first integer
+ * @y: second integer
+ * Return: returns x + y
  */
-int main(void)
+int add(int x, int y)
 {
-	int n;
-
-	n = add(89, 9);
-	printf("%d\n", n);
-	return (0);
+	return (x + y);
 }
