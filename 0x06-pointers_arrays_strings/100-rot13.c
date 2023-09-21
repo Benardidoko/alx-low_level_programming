@@ -1,42 +1,27 @@
 #include "main.h"
-
 /**
- * rot13 - Encodes a string using ROT13 cipher.
- * @str: The string to be encoded.
- *
- * Return: A pointer to the encoded string.
+ * *rot13 - encodes a string using rot13.
+ * @s: int type array pointer
+ * Return: encoded
  */
-char *rot13(char *str)
+
+char *rot13(char *s)
 {
-	char *start = str;
-	char *cipher = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char *shifted = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+int i, ii;
+char input[] =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	while (*str)
+for (i = 0; s[i] != '\0'; i++)
+{
+	for (ii = 0; ii < 54; ii++)
 	{
-		char *check = cipher;
-		char *replace = shifted;
-		int found = 0;
-
-		while (*check)
+		if (((s[i] <= 'z' && s[i] >= 'a') || (s[i] <= 'Z' && s[i] >= 'A'))
+		&& s[i] == input[ii])
 		{
-			if (*str == *check)
-			{
-				*str = *replace;
-				found = 1;
-				break;
-			}
-
-			check++;
-			replace++;
+			s[i] = output[ii];
+			break;
 		}
-
-		if (!found)
-			str++;
-		else
-			str++;
 	}
-
-	return (start);
 }
-
+return (s);
+}
