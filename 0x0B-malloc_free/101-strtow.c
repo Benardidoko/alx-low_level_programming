@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * word_counter - function counts the number of words in a string
+ * word_counter - function counts the number of words in string
  * @s: string representation
  * Return: returns number of words
  */
@@ -27,8 +27,8 @@ int word_counter(char *s)
 }
 
 /**
- * strtow - splits strings to words
- * @str: string representatn
+ * strtow - splits a string to these words
+ * @str: string representation
  * Return: returns pointer to an array of string
  */
 char **strtow(char *str)
