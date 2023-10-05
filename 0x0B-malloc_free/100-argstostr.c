@@ -3,46 +3,41 @@
 #include <stdlib.h>
 
 /**
- * argstostr - concatenate all arguments into a single string
- * @ac: number of arguments
- * @av: array of argument strings
- * Return: pointer to the concatenated string or NULL on failure
+ * argstostr - for function concatenates all arguments
+ * @ac: integer representation
+ * @av: character representation
+ * Return: returns a pointer to a new string or NULL
  */
 char *argstostr(int ac, char **av)
 {
 	char *s;
-	int total_length = 0;
-	int b, c, d, i = 0;
+	int a, b, c, d;
 
-	if (ac == 0 || av == NULL)
+	if (ac == 0)
 		return (NULL);
-
-	/* Calculate the total length needed for the concatenated string */
+	if (av == 0)
+		return (NULL);
+	a = 0;
+	for (b = 0; b < ac; b++)
+	{
+		for (c = 0; av[b][c] != '\0'; c++)
+			a++;
+		a++;
+	}
+	a++;
+	s = malloc(a * sizeof(char));
+	if (s == 0)
+		return (NULL);
+	d = 0;
 	for (b = 0; b < ac; b++)
 	{
 		for (c = 0; av[b][c] != '\0'; c++)
 		{
-			total_length++;
+			s[d++] = av[b][c];
 		}
-		total_length++; /* Add 1 for the newline character */
+		s[d++] = '\n';
 	}
-	total_length++; /* Add 1 for the null terminator */
-
-	s = malloc(total_length * sizeof(char));
-	if (s == NULL)
-		return (NULL);
-
-	/* Copy the arguments into the concatenated string */
-	for (b = 0; b < ac; b++)
-	{
-		for (c = 0; av[b][c] != '\0'; c++)
-		{
-			s[i++] = av[b][c];
-		}
-		s[i++] = '\n';
-	}
-	s[i] = '\0';
-
+	s[d] = '\0';
 	return (s);
 }
 

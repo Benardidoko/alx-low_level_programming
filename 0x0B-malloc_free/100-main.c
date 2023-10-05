@@ -3,31 +3,20 @@
 #include <stdlib.h>
 
 /**
- * main - Entry point of the program.
- * @argc: The number of command-line arguments.
- * @argv: An array of strings containing the command-line arguments.
+ * main - check code for ALX School students.
  *
- * Return: 0 on success, 1 on failure.
+ * Return: Always 0.
  */
-int main(int argc, char *argv[])
+int main(int ac, char *av[])
 {
-    char *result;
+    char *s;
 
-    if (argc < 2)
+    s = argstostr(ac, av);
+    if (s == NULL)
     {
-        fprintf(stderr, "Usage: %s arg1 arg2 ... argN\n", argv[0]);
         return (1);
     }
-
-    result = argstostr(argc - 1, argv + 1);
-    if (result == NULL)
-    {
-        fprintf(stderr, "Error: Unable to allocate memory\n");
-        return (1);
-    }
-
-    printf("%s", result);
-    free(result);
+    printf("%s", s);
+    free(s);
     return (0);
 }
-
