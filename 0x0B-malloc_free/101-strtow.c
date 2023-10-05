@@ -1,24 +1,47 @@
-#include <stdio.h>
-#include <stdlib.h>
-/**
- * count_word - the function to count the number of words in a string
- * @s: string to evaluate
- * Return: number of words
- */
-int count_word(char *s)
-{
-	int flag, c, w;
-	flag = 0;
-	w = 0;
+#include "main.h"
 
-	for (c = 0; s[c] != '\0'; c++)
+/**
+ * wordcount - program to get the word count
+ * @str: string to count words present
+ * Return: number of words
+*/
+
+int wordcount(char *str)
+{
+	int words = 0;
+
+	while (*str != '\0')
 	{
-		if (s[c] == ' ')
+		if (*str == ' ')
+			str++;
+		else
 		{
-			flag = 0;
+			while (*str != ' ' && *str != '\0')
+				str++;
+			words++;
 		}
-		else if (flag == 0)
+	}
+	return (words);
+}
+
+/**
+ * free_array - Program for free arr[i]
+ * @ar: array to free
+ * @i: array[i]
+ * Return: arrays
+*/
+
+void free_array(char **ar, int i)
+{
+	if (ar != NULL && i != 0)
+	{
+		while (i >= 0)
 		{
-			flag = 1;
-			w++;
+			free(ar[i]);
+			i--;
 		}
+		free(ar);
+	}
+}
+
+/**
