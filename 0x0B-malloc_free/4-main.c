@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 /**
- * print_grid - ought to print a grid of integers
- * @grid: the address of the two-dimensional grid
+ * print_grid - prints a grid of integers
+ * @grid: the address of the two dimensional grid
  * @width: width of the grid
  * @height: height of the grid
  *
@@ -15,18 +15,22 @@ void print_grid(int **grid, int width, int height)
     int w;
     int h;
 
-    for (h = 0; h < height; h++)
+    h = 0;
+    while (h < height)
     {
-        for (w = 0; w < width; w++)
+        w = 0;
+        while (w < width)
         {
             printf("%d ", grid[h][w]);
+            w++;
         }
         printf("\n");
-    }
+        h++;
+    }   
 }
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code ALX School students.
  *
  * Return: Always 0.
  */
@@ -39,18 +43,9 @@ int main(void)
     {
         return (1);
     }
-
-    printf("Initial grid:\n");
     print_grid(grid, 6, 4);
-
+    printf("\n");
     grid[0][3] = 98;
     grid[3][4] = 402;
-
-    printf("\nModified grid:\n");
     print_grid(grid, 6, 4);
-
     free_grid(grid, 4);
-
-    return (0);
-}
-
