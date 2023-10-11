@@ -1,39 +1,47 @@
+#include <stdlib.h>
 #include "dog.h"
-#include <strlen.c>
-#include <strcpy.c>
+
 /**
- *  * new_dog - creates a new struct dog
- *   * @name: dog name
- *    * @age: dog age
- *     * @owner: dog owner
+ *  * new_dog - creates a new dog
+ *   * @name: name of dog
+ *    * @age: age of dog
+ *     * @owner: owner of dog
  *      *
- *       * Return: returnt to pinter a new strcut dog
+ *       * Return: pointer to new dog
  *        */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-		dog_t *dog = NULL;
+		unsigned int nl, ol, i;
+			dog_t *dog;
 
-			dog = malloc(sizeof(dog_t));
-				if (!dog)
-						{
-									free(dog);
-											return (dog);
-												}
-					dog->name = malloc(sizeof(char) * _strlen(name) + 1);
-						if (!dog->name)
-								{
-											free(dog);
-													return (dog);
-														}
-							dog->owner = malloc(sizeof(char) * _strlen(owner) + 1);
-								if (!dog->owner)
-										{
-													free(dog->name);
+				if (name == NULL || owner == NULL)
+							return (NULL);
+					dog = malloc(sizeof(dog_t));
+						if (dog == NULL)
+									return (NULL);
+							for (nl = 0; name[nl]; nl++)
+										;
+								nl++;
+									dog->name = malloc(nl * sizeof(char));
+										if (dog->name == NULL)
+												{
 															free(dog);
-																	return (dog);
+																	return (NULL);
 																		}
-									_strcpy(dog->name, name);
-										dog->age = age;
-											_strcpy(dog->owner, owner);
-												return (dog);
+											for (i = 0; i < nl; i++)
+														dog->name[i] = name[i];
+												dog->age = age;
+													for (ol = 0; owner[ol]; ol++)
+																;
+														ol++;
+															dog->owner = malloc(ol * sizeof(char));
+																if (dog->owner == NULL)
+																		{
+																					free(dog->name);
+																							free(dog);
+																									return (NULL);
+																										}
+																	for (i = 0; i < ol; i++)
+																				dog->owner[i] = owner[i];
+																		return (dog);
 }
