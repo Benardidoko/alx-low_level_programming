@@ -1,49 +1,48 @@
-#include "calc_functions.h"
-
+#include "3-calc.h"
 /**
- *  * add_numbers - Compute the sum of two integers.
- *   * @a: An integer.
- *    * @b: Another integer.
- *     *
- *      * Return: The sum of 'a' and 'b'.
- *       */
-int add_numbers(int a, int b)
+ *   *op_add - return the sum of 2 numbers.
+ *     *@a: integer.
+ *       *@b: integer.
+ *         *
+ *           *Return: sum.
+ *             */
+int op_add(int a, int b)
 {
 		return (a + b);
 }
 
 /**
- *  * subtract_numbers - Compute the difference of two integers.
- *   * @a: An integer.
- *    * @b: Another integer.
- *     *
- *      * Return: The difference of 'a' and 'b'.
- *       */
-int subtract_numbers(int a, int b)
+ *   *op_sub - returns difference of 2 numbers
+ *     *@a:  integer.
+ *       *@b: integer.
+ *         *
+ *           *Return: difference.
+ *             */
+int op_sub(int a, int b)
 {
 		return (a - b);
 }
 
 /**
- *  * multiply_numbers - Compute the product of two integers.
- *   * @a: An integer.
- *    * @b: Another integer.
- *     *
- *      * Return: The product of 'a' and 'b'.
- *       */
-int multiply_numbers(int a, int b)
+ *   *op_mul - returns product of two numbers.
+ *     *@a: integer.
+ *       *@b: integer.
+ *         *
+ *           *Return: product.
+ *             */
+int op_mul(int a, int b)
 {
 		return (a * b);
 }
 
 /**
- *  * divide_numbers - Compute the quotient of two integers.
- *   * @a: An integer.
- *    * @b: Another integer.
- *     *
- *      * Return: The quotient of 'a' and 'b'.
- *       */
-int divide_numbers(int a, int b)
+ *   *op_div - returns the quotient of 2 numbers.
+ *     *@a: integer.
+ *       *@b: integer.
+ *         *
+ *           *Return: quotient.
+ *             */
+int op_div(int a, int b)
 {
 		if (b == 0)
 				{
@@ -54,13 +53,13 @@ int divide_numbers(int a, int b)
 }
 
 /**
- *  * find_remainder - Compute the remainder of division.
- *   * @a: An integer.
- *    * @b: Another integer.
- *     *
- *      * Return: The remainder of dividing 'a' by 'b'.
- *       */
-int find_remainder(int a, int b)
+ *   *op_mod - returns the remainder of division.
+ *     *@a: integer.
+ *       *@b: integer.
+ *         *
+ *           *Return: remainder.
+ *             */
+int op_mod(int a, int b)
 {
 		if (b == 0)
 				{
@@ -69,4 +68,3 @@ int find_remainder(int a, int b)
 										}
 			return (a % b);
 }
-

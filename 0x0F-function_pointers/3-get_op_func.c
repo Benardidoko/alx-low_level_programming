@@ -1,31 +1,30 @@
-#include "calc_functions.h"
-
+#include "3-calc.h"
 /**
- *  * get_function - selects the appropriate function based on the operator.
- *   * @operator: The operator to be used.
- *    *
- *     * Return: Pointer to the correct function or NULL if the operator is invalid.
- *      */
-int (*get_function(char *operator))(int, int)
+ *   *get_op_func - function selects the correct function to perform.
+ *     *@s: operator used.
+ *       *
+ *         *Return: correct function result or NULL if operator is wrong.
+ *           */
+int (*get_op_func(char *s))(int, int)
 {
-		calc_function_t functions[] = {
-					{"+", add},
-							{"-", subtract},
-									{"*", multiply},
-											{"/", divide},
-													{"%", modulo},
+		op_t ops[] = {
+					{"+", op_add},
+							{"-", op_sub},
+									{"*", op_mul},
+											{"/", op_div},
+													{"%", op_mod},
 															{NULL, NULL}
 						};
-			int i = 0;
+			int i;
 
-				while (functions[i].operator != NULL)
-						{
-									if (strcmp(operator, functions[i].operator) == 0)
-												{
-																return functions[i].function;
-																		}
-											i++;
-												}
-					return NULL;
+				i = 0;
+					while (i < 5)
+							{
+										if (s[0] == ops[i].op[0])
+													{
+																	return (ops[i].f);
+																			}
+												i++;
+													}
+						return (NULL);
 }
-
